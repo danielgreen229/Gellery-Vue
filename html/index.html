@@ -1,0 +1,68 @@
+<html>
+<head>
+
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <link rel="stylesheet" type="text/css" href="https://unpkg.com/blueimp-gallery@2.27.0/css/blueimp-gallery.min.css">
+      <!-- css для свайпов -->
+      <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+      <!-- мой css для всего -->
+
+
+
+
+  <title>Vue Gallery</title>
+</head>
+
+<body>
+
+  <div id="app">
+
+       <nav>
+         <transition name = "fade" mode="out-in"><!-- Переход при отрисовки крестика меню -->
+           <i class = "material-icons menu" v-if="!show" @click="show = !show" key="menu">menu</i>
+           <i class = "material-icons clear" v-else @click="show = !show" key="clear">clear</i>
+           <!-- Создание иконок -->
+         </transition>
+
+
+
+           <ul>
+
+                 <li v-if="show" class="li1"><router-link to="/home">Home</router-link></li>
+                 <li v-if="show" class="li1"><router-link to="/about" >About Us</router-link></li>
+                 <li v-if="show" class="li1"><router-link to="/contact">Contact Us</router-link></li>
+                 <!-- отрисовка роутеров в разделе меню -->
+               <transition name="Panel"><div class="box" v-if="show"></div></transition> <!-- Отрисовка шторки -->
+               <transition name="fade" mode="out-in"><router-view> </router-view></transition>
+               <!-- Переход между роутерами и анимация fade -->
+           </ul>
+         </transition>
+       </nav>
+
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-helper.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-gallery.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-gallery-fullscreen.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+    <script type="text/javascript" src="../dist/js/vue-gallery.js"></script>
+
+    <script  src = "../src/main.js"> </script>
+
+
+
+
+
+</body>
+</html>

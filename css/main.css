@@ -1,0 +1,341 @@
+html { /*overflow:  hidden;*/ } /* Для красоты лучше скрыть */
+body
+{
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Анимция появление/ исчезновения */
+.fade-enter-active {
+  transition: opacity .2s;
+}
+.fade-leave-active{
+    transition: opacity .1s;
+}
+.fade-enter, .fade-leave-to{
+  opacity: 0;
+}
+
+/*Посты*/
+.posts{
+  max-height: 10px;
+  z-index: 1;
+  position: absolute;
+  top: 150px;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1280px;
+}
+/* Стиль для кажого поста */
+.post-itm{
+  display: inline-block;
+  z-index: 1;
+  left: 81px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Стили для картинок */
+.image {
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 5px solid #dbdbdb;
+    border-radius: 10px 10px;
+    margin-right: 35px;
+    margin-bottom: 20px;
+  }
+
+
+
+/* Анимация перемешивания */
+.cell-move {
+  transition: transform 1s;
+}
+
+
+
+/*Шторка*/
+.box{
+  z-index: 3;
+  height: 6em;
+  width: 100vw;
+  background: #736e6e;
+  top: 0px;
+  left: 0px;
+  position:absolute;
+}
+/* Верхняя полоса */
+nav{
+  z-index: 5;
+  background: #595656;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  position: relative;
+  width: 100vw;
+  height: 60px;
+  top: -8px;
+  left: -8px;
+  /*Чтобы нельзя было выделять*/
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Основная часть страницы */
+ul{
+  align-self: flex-start;
+  /*background: #eee;*/
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 60px;
+  width: 100vw;
+}
+
+
+/* Для отрисовки списка комопонентов */
+.li1, a{
+  z-index: 4;
+  width: 100vw;
+  height: 2em;
+  align-items: center;
+  position: relative;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  /*font-size: 1.5em;*/
+    text-decoration: none;
+  justify-content: center;
+  list-style-type: none;
+  text-transform: uppercase;
+  transition: all .1s ease;
+
+}
+.li1:hover{
+  z-index: 4;
+  font-size: 1.2em;
+  position: relative;
+}
+/* картинки крестика/шторки */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  position: relative;
+  top: 3px;
+  left: 3px;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+
+}
+.menu, .clear{
+  cursor: pointer;
+  font-size: 3em;
+  width: 2em;
+  color: #fff;
+}
+/*переходы для шторки*/
+
+.Panel-enter-active{
+  animation: Panel-in 0.5s;
+}
+.Panel-leave-active {
+  animation: Panel-in 0.5s reverse;
+}
+@keyframes Panel-in{
+  0%{
+      height: 0em;
+  }
+
+  100%{
+      height: 6em;
+  }
+}
+
+
+/* для компонента ABOUT */
+.about{
+
+  position: absolute;
+  top: 90px;
+  left: 90px;
+}
+
+/* Для тэга main */
+main{
+  display: flex;
+  width: 100vw;
+
+}
+
+/* для формы */
+.box1{
+  z-index: -1;
+  position:absolute;
+  top: 0;
+  left: -20;
+  padding: 20px;
+    height: 450px;
+  background: #EAEDED;
+  min-width: 120px;
+
+  display: block;
+  align-items: center;
+  width: 20vw;
+    min-width: 300px;
+  border-radius: 10px;
+}
+form{
+  position: absolute;
+      top: 20vh;
+      left: 40vw;
+      min-width: 300px;
+}
+
+
+
+.inputer{
+    min-width: 300px;
+    position: relative;
+    display: block;
+    align-items: center;
+    width: 20vw;
+    padding: 12px 20px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.inputer:focus {
+    border: 3px solid #555;
+}
+/* ошибки в форме  */
+.error{
+  padding-left: 5px;
+  margin: 0;
+  color: #ff2400;
+}
+/* для сообещния в форме */
+textarea{
+  height: 169px;
+  resize: none;
+  width: 20vw;
+}
+
+/* кнопка отправить */
+.Button {
+  position: center;
+
+  background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    border-radius: 4px;
+    color: #555555;
+    display:block;
+    width:120px;
+    margin: 20px auto;
+    font-size: 14px;
+    text-align:center;
+    height: 40px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    vertical-align: middle;
+        text-decoration:none;
+}
+.Button:hover, .Button:focus {
+   border-color:#ccc;
+   box-shadow: 0 2px 2px rgba(85, 85, 85, 0) inset, 0 0 8px rgba(85, 85, 85, 1);
+   outline: 0 none;
+}
+
+.posi{
+  position: absolute;
+    left: 52%;
+}
+
+/* Для кнопки перемешать */
+.Button1 {
+    position: absolute;
+    top: 668px;
+    left: 43%;
+
+
+    background-color: #f8f8ff;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    border-radius: 4px;
+    color: #555555;
+    display:block;
+    width:120px;
+    margin: 20px auto;
+    font-size: 14px;
+    text-align:center;
+    height: 40px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    vertical-align: middle;
+        text-decoration:none;
+}
+.Button1:hover, .Button1:focus {
+   border-color:#ccc;
+   box-shadow: 0 2px 2px rgba(85, 85, 85, 0) inset, 0 0 8px rgba(85, 85, 85, 1);
+   outline: 0 none;
+}
+/*ТЕЛЕФОННАЯ МАСКА*/
+.num{
+  position: absolute;
+  z-index: 3;
+  background-color: #eee;
+  margin: 0;
+  padding: 11px;
+  padding-top: 10px;
+  left: 3px;
+  margin-top: 3px;
+}
+
+/* Ввод в форме */
+input[type="space"]{
+  padding-left: 45px;
+}
+
+/* Адаптация к экрану */
+@media screen{
+  #app{
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+  }
+}
+
