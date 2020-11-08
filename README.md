@@ -1,5 +1,5 @@
 # Gellery-Vue
-Vue js
+Vue js with picture swiping(touchfull)
 
 <h2>Home</h2>
 <a href="https://ibb.co/3p5TXk2"><img src="https://i.ibb.co/6HcyhNz/VJ7-T22-Wl-Xgc.jpg" alt="VJ7-T22-Wl-Xgc" border="0"></a>
